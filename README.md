@@ -1,6 +1,6 @@
 # AvalonRestAgent.bundle
 
-[![license](https://img.shields.io/github/license/joshuaavalon/AvalonRestAgent.bundle.svg)](https://github.com/joshuaavalon/AvalonRestAgent.bundle/blob/master/LICENSE)
+[![license](https://img.shields.io/github/license/ajtatum/AvalonRestAgent.bundle.svg)](https://github.com/ajtatum/AvalonRestAgent.bundle/blob/master/LICENSE)
 
 This is a Plex rest API agent.
 This allows users to implement your own rest API metadata server without implement the Plex agent.
@@ -9,12 +9,11 @@ This allows users to implement your own rest API metadata server without impleme
 
 * Able to implement your rest API metadata server with any language
 
-
-## Install 
+## Install
 
 ```bash
 cd /var/lib/plexmediaserver/Library/Application Support/Plex Media Server/Plug-ins/
-git clone https://github.com/joshuaavalon/AvalonRestAgent.bundle.git
+git clone https://github.com/ajtatum/AvalonRestAgent.bundle.git
 chown plex:plex AvalonRestAgent.bundle
 service plexmediaserver restart
 ```
@@ -24,7 +23,6 @@ You need to enter Plex token and metadata server URL in setting.
 ## API Schema
 
 [See here][schema]
-
 
 ## Frequently Asked Questions
 
@@ -52,4 +50,4 @@ Here are some notes if you plan to fork the repository:
 3. To activate the virtual environment, run:
     * .\env\Scripts\activate
 
-[schema]: https://joshuaavalon.github.io/AvalonRestAgent.bundle/
+[schema]: https://ajtatum.github.io/AvalonRestAgent.bundle/

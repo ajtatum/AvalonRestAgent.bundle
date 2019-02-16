@@ -5,10 +5,10 @@ info:
   title: Avalon Rest API
   contact:
     name: GitHub
-    url: https://github.com/joshuaavalon/AvalonRestAgent.bundle
+    url: https://github.com/ajtatum/AvalonRestAgent.bundle
   license:
     name: Apache 2.0
-    url: https://github.com/joshuaavalon/AvalonRestAgent.bundle/blob/master/LICENSE
+    url: https://github.com/ajtatum/AvalonRestAgent.bundle/blob/master/LICENSE
 tags:
   - name: agent
     description: API calls used by AvalonRestAgent.bundle

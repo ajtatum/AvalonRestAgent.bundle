@@ -6,7 +6,7 @@ from show import as_episode, as_show, set_episode, set_show, set_episode_cover
 from utils import convert_date, create_id, request_json, update_season_summary
 from urlparse import urljoin
 
-version = "1.0.1"
+version = "1.0.2"
 
 
 # noinspection PyClassHasNoInit,PyShadowingNames
@@ -24,11 +24,18 @@ class AvalonRestTvAgent(Agent.TV_Shows):
         PlexLog.debug("Plex version: %s" % Platform.ServerVersion)
 
         server = Prefs["Server"]
+        authKey = Prefs["AuthKey"]
         if not server:
             PlexLog.error("Missing server!")
             return
 
-        show = request_json(urljoin(server, "show"), as_show(media))
+        requestUrl = urljoin(server, "show")
+        if authKey:
+            requestUrl = requestUrl + "?AuthKey=" + authKey
+
+        PlexLog.debug("Requesting URL: %s" % requestUrl)
+
+        show = request_json(requestUrl, as_show(media))
         if show is None:
             return
 
@@ -57,11 +64,18 @@ class AvalonRestTvAgent(Agent.TV_Shows):
         PlexLog.debug("Plex version: %s" % Platform.ServerVersion)
 
         server = Prefs["Server"]
+        authKey = Prefs["AuthKey"]
         if not server:
             PlexLog.error("Missing server!")
             return
 
-        show = request_json(urljoin(server, "show"), as_show(media))
+        requestUrl = urljoin(server, "show")
+        if authKey:
+            requestUrl = requestUrl + "?AuthKey=" + authKey
+
+        PlexLog.debug("Requesting URL: %s" % requestUrl)
+
+        show = request_json(requestUrl, as_show(media))
         if show is None:
             return
         set_show(metadata, media, show)
@@ -96,11 +110,18 @@ class AvalonRestMovieAgent(Agent.Movies):
         PlexLog.debug("Plex version: %s" % Platform.ServerVersion)
 
         server = Prefs["Server"]
+        authKey = Prefs["AuthKey"]
         if not server:
             PlexLog.error("Missing server!")
             return
 
-        movie = request_json(urljoin(server, "movie"), as_movie(media))
+        requestUrl = urljoin(server, "movie")
+        if authKey:
+            requestUrl = requestUrl + "?AuthKey=" + authKey
+
+        PlexLog.debug("Requesting URL: %s" % requestUrl)
+
+        movie = request_json(requestUrl, as_movie(media))
         if movie is None:
             return
 
@@ -129,11 +150,18 @@ class AvalonRestMovieAgent(Agent.Movies):
         PlexLog.debug("Plex version: %s" % Platform.ServerVersion)
 
         server = Prefs["Server"]
+        authKey = Prefs["AuthKey"]
         if not server:
             PlexLog.error("Missing server!")
             return
 
-        movie = request_json(urljoin(server, "movie"), as_movie(media))
+        requestUrl = urljoin(server, "movie")
+        if authKey:
+            requestUrl = requestUrl + "?AuthKey=" + authKey
+
+        PlexLog.debug("Requesting URL: %s" % requestUrl)
+
+        movie = request_json(requestUrl, as_movie(media))
         if movie is None:
             return
         set_movie(metadata, movie)
@@ -155,11 +183,18 @@ class AvalonRestArtistAgent(Agent.Artist):
         PlexLog.debug("Plex version: %s" % Platform.ServerVersion)
 
         server = Prefs["Server"]
+        authKey = Prefs["AuthKey"]
         if not server:
             PlexLog.error("Missing server!")
             return
 
-        artist = request_json(urljoin(server, "artist"), as_artist(media))
+        requestUrl = urljoin(server, "artist")
+        if authKey:
+            requestUrl = requestUrl + "?AuthKey=" + authKey
+
+        PlexLog.debug("Requesting URL: %s" % requestUrl)
+
+        artist = request_json(requestUrl, as_artist(media))
         if artist is None:
             return
 
@@ -179,11 +214,18 @@ class AvalonRestArtistAgent(Agent.Artist):
         PlexLog.debug("Plex version: %s" % Platform.ServerVersion)
 
         server = Prefs["Server"]
+        authKey = Prefs["AuthKey"]
         if not server:
             PlexLog.error("Missing server!")
             return
 
-        artist = request_json(urljoin(server, "artist"), as_artist(media))
+        requestUrl = urljoin(server, "artist")
+        if authKey:
+            requestUrl = requestUrl + "?AuthKey=" + authKey
+
+        PlexLog.debug("Requesting URL: %s" % requestUrl)
+
+        artist = request_json(requestUrl, as_artist(media))
         if artist is None:
             return
 
@@ -206,11 +248,18 @@ class AvalonRestAlbumAgent(Agent.Album):
         PlexLog.debug("Plex version: %s" % Platform.ServerVersion)
 
         server = Prefs["Server"]
+        authKey = Prefs["AuthKey"]
         if not server:
             PlexLog.error("Missing server!")
             return
 
-        album = request_json(urljoin(server, "album"), as_album(media))
+        requestUrl = urljoin(server, "album")
+        if authKey:
+            requestUrl = requestUrl + "?AuthKey=" + authKey
+
+        PlexLog.debug("Requesting URL: %s" % requestUrl)
+
+        album = request_json(requestUrl, as_album(media))
         if album is None:
             return
 
@@ -230,11 +279,18 @@ class AvalonRestAlbumAgent(Agent.Album):
         PlexLog.debug("Plex version: %s" % Platform.ServerVersion)
 
         server = Prefs["Server"]
+        authKey = Prefs["AuthKey"]
         if not server:
             PlexLog.error("Missing server!")
             return
 
-        album = request_json(urljoin(server, "album"), as_album(media))
+        requestUrl = urljoin(server, "album")
+        if authKey:
+            requestUrl = requestUrl + "?AuthKey=" + authKey
+
+        PlexLog.debug("Requesting URL: %s" % requestUrl)
+
+        album = request_json(requestUrl, as_album(media))
         if album is None:
             return
 

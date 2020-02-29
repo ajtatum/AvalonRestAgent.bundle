@@ -24,5 +24,11 @@
     "label": "Server that support Avalon Rest API v1.0",
     "type": "text",
     "default": ""
+  },
+  {
+    "id": "AuthKey",
+    "label": "Optional Auth Key used to authenticate with agent.",
+    "type": "text",
+    "default": ""
   }
 ]
